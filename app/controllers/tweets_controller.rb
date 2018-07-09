@@ -54,26 +54,10 @@ class TweetsController < ApplicationController
       if params[:content] != ""
         @tweet.update(:content => params[:content])
         redirect to "/tweets/#{@tweet.id}"
-
       else
         redirect to "/tweets/#{@tweet.id}/edit"
       end
     end
-        @tweet = Tweet.find_by_id(params[:id])
-        if @tweet && @tweet.user == current_user
-          if @tweet.update(content: params[:content])
-            redirect to "/tweets/#{@tweet.id}"
-          else
-            redirect to "/tweets/#{@tweet.id}/edit"
-          end
-        else
-          redirect to '/tweets'
-        end
-      end
-    else
-      redirect to '/login'
-    end
-  end
 
   delete '/tweets/:id/delete' do
     if logged_in?
