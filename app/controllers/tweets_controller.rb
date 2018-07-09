@@ -18,7 +18,7 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets' do
-      if logged_in? && params[:content] == ""
+      if logged_in? && params[:content] != ""
         redirect to "/tweets/new"
       else
         @tweet = current_user.tweets.build(content: params[:content])
