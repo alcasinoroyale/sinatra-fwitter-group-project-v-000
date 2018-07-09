@@ -54,4 +54,4 @@ class UsersController < ApplicationController
       @user = User.find_by_slug(params[:slug])
       erb :'songs/show'
     end
-end
+  end
