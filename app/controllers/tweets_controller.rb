@@ -19,6 +19,7 @@ class TweetsController < ApplicationController
 
   post '/tweets' do
       if logged_in? && params[:content] != ""
+        @tweet = Tweet.create(:content => params[:content])
         redirect to "/tweets/new"
       else
         @tweet = current_user.tweets.build(content: params[:content])
