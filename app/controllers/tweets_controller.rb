@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  
+
   get '/tweets' do
     if logged_in?
       @tweets = Tweet.all
@@ -18,7 +18,6 @@ class TweetsController < ApplicationController
   end
 
   post '/tweets' do
-    if logged_in?
       if params[:content] == ""
         redirect to "/tweets/new"
       else
