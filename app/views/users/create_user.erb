@@ -1,26 +1,12 @@
 <h2>Signup</h2>
 <form method="POST" action="/signup">
-<label for="username">Username:</label>
-<input type="text" name="username">
-<br>
-<label for="email">Email:</label>
-<input type="text" name="email">
-<br>
-<label for="password">Password:</label>
-<input type="text" name="password">
-
-
-<h2>Users</h2>
-
-<% unless locals.empty? %>
-  <%= message %>
-<% end %>
-
-
-<h3>Sign Up</h3>
-<form action="/signup" method="POST">
-  <p>Name: <input type="text" name="username"></p>
-  <p>Email: <input type="text" name="email"></p>
-  <p>Password: <input type="text" name="password"></p>
-  <input type="submit" value="Log In">
+  <label for="username">Username:</label>
+  <input type="text" name="username">
+    <br>
+  <label for="email">Email:</label>
+  <input type="text" name="email">
+    <br>
+  <label for="password">Password:</label>
+  <input type="text" name="password">
+<input type="submit" value="Log In">
 </form>
